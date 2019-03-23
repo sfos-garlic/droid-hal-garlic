@@ -9,6 +9,28 @@
 
 %define installable_zip 1
 %define droid_target_aarch64 1
+
+%define straggler_files \
+/bugreports\
+/d\
+/file_contexts.bin\
+/init.qcom.sh\
+/init.qcom.usb.sh\
+/property_contexts\
+/sdcard\
+/selinux_version\
+/service_contexts\
+/vendor\
+%{nil}
+
+%define android_config \
+#define QCOM_BSP 1\
+#define QTI_BSP 1\
+%{nil}
+#Black gallery pictures and no browser content/browser crash
+ %define android_config \
+  #define WANT_ADRENO_QUIRKS 1\
+ %{nil}
 %include rpm/dhd/droid-hal-device.inc
 
 # IMPORTANT if you want to comment out any macros in your .spec, delete the %
