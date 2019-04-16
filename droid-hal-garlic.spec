@@ -28,9 +28,11 @@
 #define QTI_BSP 1\
 %{nil}
 #Black gallery pictures and no browser content/browser crash
- %define android_config \
-  #define WANT_ADRENO_QUIRKS 1\
- %{nil}
+
+%define android_config \
+#define WANT_ADRENO_QUIRKS 1\
+%{nil}
+
 %include rpm/dhd/droid-hal-device.inc
 
 # IMPORTANT if you want to comment out any macros in your .spec, delete the %
